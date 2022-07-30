@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20220405190940_Rating.cs" />
+    <Compile Remove="Migrations\20220405190940_Rating.Designer.cs" />
+    <Compile Remove="Migrations\20220406102329_login.cs" />
+    <Compile Remove="Migrations\20220406102329_login.Designer.cs" />
+    <Compile Remove="Migrations\20220406102558_UpdateLogin.cs" />
+    <Compile Remove="Migrations\20220406102558_UpdateLogin.Designer.cs" />
+    <Compile Remove="Migrations\20220406102917_Login.cs" />
+    <Compile Remove="Migrations\20220406102917_Login.Designer.cs" />
+    <Compile Remove="Migrations\20220514204449_Appointments.cs" />
+    <Compile Remove="Migrations\20220514204449_Appointments.Designer.cs" />
+    <Compile Remove="Migrations\20220529120017_Roles.cs" />
+    <Compile Remove="Migrations\20220529120017_Roles.Designer.cs" />
+    <Compile Remove="Migrations\20220529121826_Roles.cs" />
+    <Compile Remove="Migrations\20220529121826_Roles.Designer.cs" />
+    <Compile Remove="Migrations\20220602175259_Roles.cs" />
+    <Compile Remove="Migrations\20220602175259_Roles.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.23" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.12" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.17.0" />
+    <PackageReference Include="RestSharp" Version="107.3.0" />
+  </ItemGroup>
+
+</Project>

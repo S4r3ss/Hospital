@@ -1,0 +1,36 @@
+﻿
+<h1>Users</h1>
+
+<div class="d-flex justify-content-between">
+    <h5><a asp-controller="User" asp-action="AllUsers" asp-route-userName="" asp-route-rank="-1" asp-route-currentPage="0">All</a> | <a  asp-controller="User" asp-action="AllUsers" asp-route-userName="" asp-route-rank="2" asp-route-currentPage="0">Head Doctors</a> <a  asp-controller="User" asp-action="AllUsers" asp-route-userName="" asp-route-rank="1" asp-route-currentPage="0">Doctors</a> <a  asp-controller="User" asp-action="AllUsers" asp-route-userName="" asp-route-rank="0" asp-route-currentPage="0">Clients</a></h5>
+    <h5><a asp-controller="User" asp-action="AllUsersReport">Generate Users Report</a></h5>
+</div>
+<table class="table">
+    <thead>
+        <tr class="text-center" style="vertical-align: middle;">
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Role</th>
+            <th scope="col">Reports</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var user in @Model)
+        {
+            <tr class="text-center" style="vertical-align: middle;">
+                <td scope="row"><a class="link-primary" asp-controller="Authentication" asp-action="TargetUserPage" asp-route-userID=@user.Id>@user.Name</a></td>
+                <td><a class="link-primary" asp-controller="Authentication" asp-action="TargetUserPage" asp-route-userID=@user.Id>@user.Surname</a></td>
+                <td><a>@user.Email</a></td>
+                <td><a>@user.Address</a></td>
+                <td><a>@user.UserRole</a></td>
+                
+                @if(user.RolePos == 1)
+                {
+                    <td><a class="btn btn-success" asp-controller="User" asp-action="Report" asp-route-doctorID=@user.Id>Show report</a></td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

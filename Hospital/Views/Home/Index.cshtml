@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h2 class="display-4 mt-6">Шукайте лікарів, клініки та ліки онлайн</h2>
+    <h3 class="display-5">Записуйтесь на прийом не виходячи з дому</h3>
+    <div class="d-flex justify-content-center">
+        <div class="w-25 mt-5">
+            <div class="input-group mb-5">
+                @using (Html.BeginForm("Doctors", "Home", FormMethod.Get))
+                {
+                    <div class="d-flex ">
+                        <input autocomplete="off" type="text" name="DoctorName" Id="DoctorName" class="form-control" placeholder="Введіть прізвище">
+                        <button class="btn btn-outline-secondary ms-2" type="submit" value="Doctors">Знайти</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-evenly">
+        <div class="card" style="width: 18rem;">
+            <a class="card-block stretched-link text-decoration-none" href="/doctors/1">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">Лікарі</h5>
+                    <p class="card-text">Обирайте та записуйтесь до лікарів поруч з вами</p>
+                    <span class="text-info d-flex align-items-end justify-content-between">
+                        <i class="far fa-arrow-alt-circle-right fa-3x"></i>
+                        <img class="card-img-bottom w-50" src="~/Pictures/Cards/doctors-small.png" alt="Card image cap">
+                    </span>
+                </div>
+            </a>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <a class="card-block stretched-link text-decoration-none" href="/pills/all/1">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">Замовлення ліків</h5>
+                    <p class="card-text">Обирайте та записуйтесь до лікарів поруч з вами</p>
+                    <span class="text-info d-flex align-items-end justify-content-between">
+                        <i class="far fa-arrow-alt-circle-right fa-3x"></i>
+                        <img class="card-img-bottom w-50" src="~/Pictures/Cards/med-institutions.png" alt="Card image cap">
+                    </span>
+                </div>
+            </a>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <a class="card-block stretched-link text-decoration-none" href="/insurance">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">Медичне страхування</h5>
+                    <p class="card-text">100.000 грн на медичні послуги - обирайте найвигідніші умови</p>
+                    <span class="text-info d-flex align-items-end justify-content-between">
+                        <i class="far fa-arrow-alt-circle-right fa-3x"></i>
+                        <img class="card-img-bottom w-50" src="~/Pictures/Cards/insurance.png" alt="Card image cap">
+                    </span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <h2 class="display-5 mt-6">Як записатись до лікаря?</h2>
+
+    <div class="card-deck mt-4 mb-5 d-flex justify-content-evenly">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body text-dark">
+                    <div class="text-info d-flex align-items-end justify-content-between">
+                        <img class="card-img-bottom" src="~/Pictures/Cards/step_1.png" alt="Card image cap">
+                    </div>
+                    <div>
+                        <h5 class="card-title">Крок 1</h5>
+                        <p class="card-text">Оберіть лікаря та запишіться на зручний час</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body text-dark">
+                    <div class="text-info d-flex align-items-end justify-content-between">
+                        <img class="card-img-bottom w-75" src="~/Pictures/Cards/step_2.png" alt="Card image cap">
+                    </div>
+                    <div class="mt-5">
+                        <h5 class="card-title">Крок 2</h5>
+                        <p class="card-text">Прийдіть на прийом у вказаний час без черги</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body text-dark">
+                    <div class="text-info d-flex align-items-end justify-content-between">
+                        <img class="card-img-bottom h-50" src="~/Pictures/Cards/step_4.png" alt="Card image cap">
+                    </div>
+                    <div class="mt-2">
+                        <h5 class="card-title">Крок 3</h5>
+                        <p class="card-text">Слідкуйте за медичною карткою та призначеннями лікаря онлайн</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

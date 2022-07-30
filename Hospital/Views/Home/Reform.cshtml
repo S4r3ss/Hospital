@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section containerFluid
+{
+    <div class="d-flex justify-content-center">
+        <img src="~/Pictures/Pictures/Reform/moz-patient-background.jpg" alt="Card image cap">
+    </div>
+    <div class="container mt-5">
+        <h2>Що таке медична реформа для громадян України?</h2>
+    </div>
+    <div class="d-flex justify-content-around mt-5">
+        <h5 class="w-25 text-muted font-weight-normal mb-5">Згідно з Реформою Міністерства охорони здоров'я України, громадяни України повинні обрати сімейного лікаря та підписати з ним декларацію про медичне обслуговування. Саме реформа дозволить реалізувати принцип «гроші за пацієнтом», коли лікар отримуватиме оплату за надані послуги в залежності від кількості підписаних декларацій і закріплених за ним пацієнтів.</h5>
+        <img src="~/Pictures/Pictures/Reform/steps-change-doctor.svg" alt="Card image cap">
+    </div>
+
+    <div class="bg-lightblue">
+        <div class="container">
+            <h2 class="pt-5">Як обрати лікаря?</h2>
+        </div>
+        <div class="d-flex justify-content-around mt-5">
+            <img src="~/Pictures/Pictures/Reform/steps-peoples.svg" class="mb-5" alt="Card image cap">
+            <h5 class="w-25 text-muted font-weight-normal">Обрати сімейного лікаря та підписати з ним декларацію можна незалежно від місця проживання або реєстрації. При виборі спеціаліста рекомендовано зважати на його стаж, компетенції, зручність розташування його місця прийому, персональні якості, тощо.</h5>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2>Що таке медична реформа для громадян України?</h2>
+    </div>
+    <div class="d-flex justify-content-center mt-5">
+        <img class="w-75" src="~/Pictures/Pictures/Reform/scheme-desktop.svg" alt="Card image cap">
+    </div>
+
+    <div class="bg-lightblue mt-5">
+        <div class="container">
+            <h2 class="pt-5">Як записатись до лікаря у подальшому?</h2>
+        </div>
+        <div class="d-flex justify-content-around mt-5 text-center">
+            <div>
+                <img src="~/Pictures/Pictures/Reform/desktop.svg" alt="Card image cap">
+                <h3 class="mt-5">НА САЙТІ <a asp-controller="Home" asp-action="Index">SaressHospital</a></h3>
+            </div>
+            <div>
+                <img src="~/Pictures/Pictures/Reform/nuse.svg" alt="Card image cap">
+                <h3 class="mt-5">В РЕЄСТРАТУРІ</h3>
+            </div>
+            <div class="mb-5">
+                <img src="~/Pictures/Pictures/Reform/doctor.svg" alt="Card image cap">
+                <h3 class="mt-5"><a asp-controller="Home" asp-action="Index" data-toggle="modal" data-target="#exampleModalCenter">ЗА ТЕЛЕФОНОМ РЕЄСТРАТУР</a></h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Номера реєстратур</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <table class="table text-center">
+                <tbody>
+                    <tr>
+                        <td class="align-middle">АМБУЛАТОРНО-ПОЛІКЛІНІЧНЕ ВІДДІЛЕННЯ ПМД №1</td>
+                        <td class="align-middle">місто ЧЕРНІВЦІ, просп. Незалежності 109</td>
+                        <td class="text-nowrap align-middle">(037) 224-18-03</td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle">АМБУЛАТОРНО-ПОЛІКЛІНІЧНЕ ВІДДІЛЕННЯ ПМД №2</td>
+                        <td class="text-nowrap align-middle">місто ЧЕРНІВЦІ, просп. Незалежності 109</td>
+                        <td class="text-nowrap align-middle">(037) 224-18-03</td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle">АМБУЛАТОРНО-ПОЛІКЛІНІЧНЕ ВІДДІЛЕННЯ ПМД №3</td>
+                        <td class="text-nowrap align-middle">місто ЧЕРНІВЦІ, вул. Головна 218</td>
+                        <td class="text-nowrap align-middle">(037) 254-67-49</td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle">АМБУЛАТОРНО-ПОЛІКЛІНІЧНЕ ВІДДІЛЕННЯ ПМД №4</td>
+                        <td class="align-middle">місто ЧЕРНІВЦІ, вул. Руська 273</td>
+                        <td class="text-nowrap align-middle">(037) 250-38-08</td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle">АМБУЛАТОРНО-ПОЛІКЛІНІЧНЕ ВІДДІЛЕННЯ ПМД №4 ВУЛ.БІЛОРУСЬКА 30</td>
+                        <td class="align-middle">місто Чернівці вул. Білоруська 30</td>
+                        <td class="text-nowrap align-middle">(037) 250-38-08</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+    </div>
+}

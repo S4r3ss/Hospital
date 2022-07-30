@@ -1,0 +1,192 @@
+﻿<div class="d-flex">
+    <section>
+        <h1 class="text-dark mt-5">Медичне страхування<br /> для кожного</h1>
+        <h5>Відшкодування витрат на придбання ліків, забезпечення виїзду<br /> швидкої допомоги та невідкладного стаціонарного лікування сумою <br />100 000 гривень</h5>
+        <div class="d-flex">
+            <button type="button" class="btn btn-primary mt-5 w-50">Оформити страхування</button>
+            <button type="button" class="btn btn-outline-secondary mt-5 w-50 ms-3">Корпоративне страхування</button>
+        </div>
+    </section>
+    <section class="mt-5 ms-5">
+        <iframe id="ytplayer" type="text/html" width="560" height="315" src="https://www.youtube.com/embed/0ANVzeIyX3E?autoplay=1&amp;color=white&amp;mute=1&amp;loop=1&amp;playlist=0ANVzeIyX3E" frameborder="0" allowfullscreen="" allow="autoplay" data-title="YouTube video player">Ваш браузер не поддерживает встроенные фреймы!</iframe>
+    </section>
+</div>
+
+<div class="mt-5">
+    <div class="d-flex justify-content-around text-secondary">
+        <h1>Це важливо для вас</h1>
+    </div>
+    <div class="d-flex justify-content-center mb-5">
+        <div class="card mt-5" style="width: 18rem;">
+            <img class="card-img-top w-50 rounded mx-auto d-block mt-4" src="~/Pictures/Insurance/important1.svg" alt="Card image cap">
+            <div class="card-body text-center">
+                <h3 class="text-danger">Економія часу <br />та грошей</h3>
+                <p class="card-text">Страхова компанія доставить ліки додому та компенсує їх вартість.</p>
+            </div>
+        </div>
+
+        <div class="card mt-5 mx-5" style="width: 18rem;">
+            <img class="card-img-top w-50 rounded mx-auto d-block mt-4" src="~/Pictures/Insurance/important2.svg" alt="Card image cap">
+            <div class="card-body text-center">
+                <h3 class="text-danger">Своєчасне лікування</h3>
+                <p class="card-text">Компенсація витрат на медичні послуги дозволить вам не відкладати візит до лікаря.</p>
+            </div>
+        </div>
+
+        <div class="card mt-5" style="width: 18rem;">
+            <img class="card-img-top w-50 rounded mx-auto d-block mt-4" src="~/Pictures/Insurance/important3.svg" alt="Card image cap">
+            <div class="card-body text-center">
+                <h3 class="text-danger">Страхування <br />дітей</h3>
+                <p class="card-text">Страхова компанія компенсує лікування вашої дитини та надасть підтримку, коли вона найбільше потрібна.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section containerFluid
+{
+    <div class="bg-danger text-light text-center pt-4 pb-4">
+        <p><h4>СТРАХОВКА ПОКРИВАЄ ВИТРАТИ НА ЛІКУВАННЯ ТА МЕДИКАМЕНТИ</h4></p>
+
+        <p><h1>100 000 ГРИВЕНЬ НА РІК.</h1></p>
+    </div>
+    <div class="mt-5 mb-5 text-center text-secondary">
+        <p><h1>Як використати можливості страхування?</h1></p>
+
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="accordion w-50 d-flex flex-column" id="accordionExample">
+
+
+
+            <div class="accordion-item mb-2">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        Як отримати медикаменти по страховці?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <ol class="list-counter-circle">
+                            <li class="mt-2">Отримати призначення ліків від лікаря.</li>
+                            <li class="mt-2">Зателефонувати до страхової компанії на прийомі у лікаря.</li>
+                            <li class="mt-2">Повідомити діагноз та призначені ліки.</li>
+                            <li class="mt-2">На вимогу страхової компанії відправити фото призначень лікаря за допомогою зручних месенджерів.</li>
+                            <li class="mt-2">Узгодити час та місце видачі ліків.</li>
+                            <li class="mt-2">Отримати ліки в зручній аптеці, сплативши лише 10-20% їх вартості.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="accordion-item mb-2">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseOne">
+                        Як отримати швидку медичну допомогу по страховці?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <ol class="list-counter-circle">
+                            <li class="mt-2">Зателефонувати до страхової компанії.</li>
+                            <li class="mt-2">Описати самопочуття та вказати місце перебування.</li>
+                            <li class="mt-2 mb-1">У разі потреби страхова компанія організовує виїзд найближчої бригади швидкої допомоги.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="accordion-item mb-2">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseOne">
+                        Як отримати невідкладне стаціонарне лікування по страховці?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <ol class="list-counter-circle">
+                            <li class="mt-2">Отримати рекомендації лікаря щодо госпіталізації.</li>
+                            <li class="mt-2">Зателефонувати до страхової компанії.</li>
+                            <li class="mt-2">Повідомити про свій діагноз та рекомендації лікаря щодо госпіталізації.</li>
+                            <li class="mt-2 mb-1">У разі потреби у госпіталізації страхова компанія визначає лікувальний заклад та організовує лікування.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="accordion-item mb-2">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseOne">
+                        Як отримати додаткову діагностику по страховці?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <ol class="list-counter-circle">
+                            <li class="mt-2">Отримати призначення на обстеження та аналізи від лікаря.</li>
+                            <li class="mt-2">Зателефонувати до страхової компанії.</li>
+                            <li class="mt-2">Повідомити діагноз, призначені аналізи та обстеження.</li>
+                            <li class="mt-2">На вимогу страхової компанії відправити фото призначень лікаря за допомогою месенджерів.</li>
+                            <li class="mt-2">Узгодити час та місце проведення діагностики.</li>
+                            <li class="mt-2 mb-1">Отримати необхідну діагностику/обстеження сплативши лише 10-20% їх вартості.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <div>
+        <div class="mt-5 mb-5 text-center text-secondary">
+            <p><h1>Оберіть свій захист</h1></p>
+        </div>
+
+        <div class="d-flex justify-content-center mb-5">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header text-center">
+                    <h5 class="card-title mt-2">Стандарт</h5>
+                </div>
+                <div class="card-body">
+                    <p><h1 style="text-align:left;float:left;">2354</h1> <h3 class="mt-4">грн/рік</h3></p>
+
+                    <hr class="bg-danger"/>
+                    <h5 class="text-danger">Умови</h5>
+                    <hr class="bg-danger"/>
+                    <p>СТРАХОВА КОМПАНІЯ СПЛАЧУЄ</p>
+                    <p>80% Вартості ліків</p>
+                    <p>100% Швидкої допомоги</p>
+                    <p>100% Невідкладного медичного стаціонару</p>
+                    <a href="#" class="btn btn-primary w-100">Оформити страхування</a>
+                </div>
+            </div>
+
+            <div class="card ms-5" style="width: 18rem;">
+                <div class="card-header text-center">
+                    <h5 class="card-title mt-2">Стандарт+</h5>
+                </div>
+                <div class="card-body">
+                    <p><h1 style="text-align:left;float:left;">2499</h1> <h3 class="mt-4">грн/рік</h3></p>
+
+                    <hr class="bg-danger" />
+                    <h5 class="text-danger">Умови</h5>
+                    <hr class="bg-danger" />
+                    <p>СТРАХОВА КОМПАНІЯ СПЛАЧУЄ</p>
+                    <p>90% Вартості ліків</p>
+                    <p>100% Швидкої допомоги</p>
+                    <p>100% Невідкладного медичного стаціонару</p>
+                    <a href="#" class="btn btn-primary w-100">Оформити страхування</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    }

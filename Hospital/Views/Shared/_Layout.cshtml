@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Hospital</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-utilities.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/fontawesome/css/all.css" />
+</head>
+<body class="main-header d-flex flex-column min-vh-100">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand ms-4" asp-controller="Home" asp-action="Index">Hospital</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    @{
+                        switch (ViewData["CurPage"])
+                        {
+                            case "0":
+                                <a class="nav-item nav-link active" asp-controller="Home" asp-action="Index">Головна</a>
+                                <a class="nav-item nav-link" asp-controller="Home" asp-action="Doctors">Лікарі</a>
+                                <a class="nav-item nav-link" asp-controller="Home" asp-action="Reform">Медична реформа</a>
+                                <a class="nav-item nav-link" asp-controller="Pills" asp-action="All" asp-route-id="1">Ліки онлайн</a>
+                                break;
+                            case "1":
+                                <a class="nav-item nav-link" asp-controller="Home" asp-action="Index">Головна</a>
+                                <a class="nav-item nav-link active" asp-controller="Home" asp-action="Doctors">Лікарі</a>
+                                <a class="nav-item nav-link" asp-controller="Home" asp-action="Reform">Медична реформа</a>
+                                <a class="nav-item nav-link" asp-controller="Pills" asp-action="All" asp-route-id="1">Ліки онлайн</a>
+                                break;
+                            case "2":
+                                <a class="nav-item nav-link" asp-controller="Home" asp-action="Index">Головна</a>
+                                <a class="nav-item nav-link" asp-controller="Home" asp-action="Doctors">Лікарі</a>
+                                <a class="nav-item nav-link active" asp-controller="Home" asp-action="Reform">Медична реформа</a>
+                                <a class="nav-item nav-link" asp-controller="Pills" asp-action="All" asp-route-id="1">Ліки онлайн</a>
+                                break;
+                            case "3":
+                                <a class="nav-item nav-link" asp-controller="Home" asp-action="Index">Головна</a>
+                                <a class="nav-item nav-link" asp-controller="Home" asp-action="Doctors">Лікарі</a>
+                                <a class="nav-item nav-link" asp-controller="Home" asp-action="Reform">Медична реформа</a>
+                                <a class="nav-item nav-link active" asp-controller="Pills" asp-action="All" asp-route-id="1">Ліки онлайн</a>
+                            break;
+                            default:
+                                <a class="nav-item nav-link" asp-controller="Home" asp-action="Index">Головна</a>
+                                <a class="nav-item nav-link" asp-controller="Home" asp-action="Doctors">Лікарі</a>
+                                <a class="nav-item nav-link" asp-controller="Home" asp-action="Reform">Медична реформа</a>
+                                <a class="nav-item nav-link" asp-controller="Pills" asp-action="All" asp-route-id="1">Ліки онлайн</a>
+                            break;
+                        }
+                    }
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3 w-100">
+            @RenderBody()
+        </main>
+    </div>
+    
+    <div class="container-fluid pl-0 pr-0">
+      @RenderSection("containerFluid", required: false)
+    </div>
+    <footer class="footer mt-auto navbar-dark bg-dark text-muted pt-4">
+      <div class="container">
+        <div class="row">
+        <div class="col-12 col-md">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>
+          <small class="d-block mb-3 text-muted">© 2021-2022</small>
+        </div>
+        <div class="col-6 col-md">
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Про нас</a></li>
+            <li><a class="text-muted" asp-controller="Home" asp-action="Reform">Медична реформа</a></li>
+            <li><a class="text-muted" asp-controller="Insurance" asp-action="Index">Страхування</a></li>
+            <li><a class="text-muted" href="#">Контакти</a></li>
+            <li><a class="text-muted" href="#">Згода користувача</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Служба технічної підтримки</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted"  href="tel:380951483461">+38 095 148-34-61</a></li>
+            <li><a class="text-muted" href="tel:380684392842">+38 068 439-28-42</a></li>
+            <li><a class="text-muted" href="tel:380990277995">+38 099 027-79-95</a></li>
+            <li><a class="text-muted" href="tel:38066241817">+38 066 214-18-17</a></li>
+            <li>Тільки з питань роботи порталу,</li>
+            
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Години роботи центрального офісу</h5>
+          <ul class="list-unstyled text-small">
+            <li>Пн. - Пт. з 8:00 до 18:00</li>
+            <li>Сб. з 9:00 до 16:00</li>
+          </ul>
+        </div>
+        
+      </div>
+      </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

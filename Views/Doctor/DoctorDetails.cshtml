@@ -1,0 +1,240 @@
+﻿<div class="container">
+    <div class="main-body">
+        <div class="row gutters-sm mt-5">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <img src="~/Pictures/Doctors/@Model.Doctor.Doctor.Picture" alt="Admin" class="rounded-circle" width="260">
+                            <div class="mt-3">
+                                <h4>@Model.Doctor.Doctor.Name</h4>
+                                <p class="text-secondary mb-1">@Model.Doctor.Doctor.Position</p>
+                                <p class="text-muted font-size-sm">@Model.Doctor.Doctor.Age років</p>
+                                <a class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Записатись на прийом</a>
+                                <button class="btn btn-outline-primary">Повідомлення</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-3">Що робити, якщо ваш лікар уже не працює?</h6>
+                            <span class="text-secondary">Якщо лікар уже не працює, ваша декларація буде автоматично анульована. Оберіть іншого лікаря й повторіть із ним процес укладання декларації.</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-3">Чи можна обрати іншого лікаря за наявності діючої декларації?</h6>
+                            <span class="text-secondary">Так. У разі підписання декларації з іншим лікарем попередня буде автоматично анульована.</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-3">Як розірвати декларацію без переукладання з іншим лікарем?</h6>
+                            <span class="text-secondary">Надіслати <a href="https://nszu.gov.ua/gromadyanam/koristuvacham-ecoz/termination">звернення до НСЗУ.</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Повне ім'я</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                @Model.Doctor.Doctor.FullName
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Email</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                @Model.Doctor.Doctor.Email
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Телефон</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                @if (Model.Doctor.Doctor.Number == null || Model.Doctor.Doctor.Number == "")
+                                {
+                                    <p class="mb-0">Не вказаний</p>
+                                }
+                                else
+                                {
+                                    @Model.Doctor.Doctor.Number
+                                }
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Адреса</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                @Model.Doctor.Doctor.Address
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Рейтинг</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                @{int number = 0;}
+                                @if (Convert.ToInt32(@Model.Doctor.DoctorsRating) == @Model.Doctor.DoctorsRating)
+                                {
+                                    @for (int i = 0; i < @Model.Doctor.DoctorsRating; i++)
+                                    {
+                                        number++;
+                                        <a asp-controller="Doctor" asp-action="ChangeRating" asp-route-id="@number" asp-route-doctorid="@Model.Doctor.Doctor.Id"><span class='bi bi-star-fill' style='color:orange'></span></a>
+                                    }
+                                    @for (double i = 5; i > @Model.Doctor.DoctorsRating; i--)
+                                    {
+                                        number++;
+                                        <a asp-controller="Doctor" asp-action="ChangeRating" asp-route-id="@number" asp-route-doctorid="@Model.Doctor.Doctor.Id"><span class='bi bi-star-fill' style='color:grey'></span></a>
+                                    }
+                                }
+                                else
+                                {
+                                    for(int i = 0; i < (int)@Model.Doctor.DoctorsRating; i++)
+                                    {
+                                        number++;
+                                        <a asp-controller="Doctor" asp-action="ChangeRating" asp-route-id="@number" asp-route-doctorid="@Model.Doctor.Doctor.Id"><span class='bi bi-star-fill' style='color:orange'></span></a>
+                                    }
+
+                                    number++;
+                                    <a asp-controller="Doctor" asp-action="ChangeRating" asp-route-id="@number" asp-route-doctorid="@Model.Doctor.Doctor.Id"><span class='bi bi-star-half' style='color:orange'></span></a>
+
+                                    @for (double i = 5; i > (int)@Model.Doctor.DoctorsRating+1; i--)
+                                    {
+                                        number++;
+                                        <a asp-controller="Doctor" asp-action="ChangeRating" asp-route-id="@number" asp-route-doctorid="@Model.Doctor.Doctor.Id"><span class='bi bi-star-fill' style='color:grey'></span></a>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row gutters-sm">
+                    <div class="col-sm-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h6 class="d-flex align-items-center mb-3"><i>Що треба знати про укладення декларацій?</i></h6>
+                                <ul>
+                                    <li>Декларація дає можливість отримувати гарантовані медичні послуги, за які сплачуватиме держава.</li>
+                                    <li>Укласти декларацію можна з лікарями первинної ланки – це сімейний лікар (без вікових обмежень), терапевт (особи з 18 років), педіатр (діти до 18 років).</li>
+                                    <li>Ви маєте право обрати лікаря, який надає первинну медичну допомогу, незалежно від місця реєстрації або проживання.</li>
+                                    <li>Для дітей декларацію укладають батьки на ім’я дитини. Наявність декларації у батьків не впливає на вибір лікаря для дитини. Це може бути як їх сімейний лікар, так і інший лікар первинної ланки.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h6 class="d-flex align-items-center mb-3"><i>Як укласти декларацію?</i></h6>
+                                <p>
+                                    Ми рекомендуємо наступні кроки:
+                                </p>
+                                <ul>
+                                    <li>Зареєструйтеся на Saress Hospital, та заповніть свої дані в особистому кабінеті;</li>
+                                    <li>Оберіть лікаря за власними критеріями та запишіться до нього на прийом;</li>
+                                    <li>Прийдіть на прийом із документом, що посвідчує особу (наприклад, паспорт), номером платника податків та мобільним телефоном для отримання смс-підтвердження. (На цьому прийомі ви одразу можете отримувати медичні послуги).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:1300px;">
+    <div class="modal-content">
+      <div class="modal-body">
+          <table class="w-100 table table-bordered text-center">
+              <tr style="height:30px" class="w-100">
+                @for(int i = @Model.Today; i < @Model.Today+7; i++)
+                {
+                    if(i <= @Model.MaxDays)
+                    {
+                        <td style="min-width: 40px">@Model.StringMonth @i</td>
+                    }
+                    else
+                    {
+                        <td style="min-width: 40px">@Model.NextMonth @(i-@Model.MaxDays)</td>
+                    }
+                }
+              </tr>
+                @for(int hour = 10; hour <= 19; hour++)
+                {
+                    @for(int min = 0; min <= 45; min+=15)
+                    {
+                        <tr style="height: 30px; background-color:white;margin-right:1px">
+                            @for(int i = @Model.Today; i < @Model.Today+7; i++)
+                            {
+                                if(i <= @Model.MaxDays)
+                                {
+                                    if(@min == 0)
+                                    {
+                                        <td style="min-width: 40px;" id="@i:@hour:@min"><a class="link-primary" id="a @i:@hour:@min" asp-controller="Appointment" asp-action="CreateAppointment" asp-route-hour=@hour asp-route-minute=@min asp-route-day=@i asp-route-doctorid="@Model.Doctor.Doctor.Id">@hour:00</a></td>
+                                    }
+                                    else
+                                    {
+                                        <td style="min-width: 40px;" id="@i:@hour:@min"><a class="link-primary" id="a @i:@hour:@min" asp-controller="Appointment" asp-action="CreateAppointment" asp-route-hour=@hour asp-route-minute=@min asp-route-day=@i asp-route-doctorid="@Model.Doctor.Doctor.Id">@hour:@min</a></td>
+                                    }
+                                }
+                                else
+                                {
+                                    if(@min == 0)
+                                    {
+                                        <td style="min-width: 40px;" id="@(i-@Model.MaxDays):@hour:@min"><a class="link-primary" id="a @(i-@Model.MaxDays):@hour:@min" asp-controller="Appointment" asp-action="CreateAppointment" asp-route-hour=@hour asp-route-minute=@min asp-route-day=@(i-Model.MaxDays) asp-route-month=@Model.NextMonth asp-route-doctorid="@Model.Doctor.Doctor.Id">@hour:00</a></td>
+                                    }
+                                    else
+                                    {
+                                        <td style="min-width: 40px;" id="@(i-@Model.MaxDays):@hour:@min"><a class="link-primary" id="a @(i-@Model.MaxDays):@hour:@min" asp-controller="Appointment" asp-action="CreateAppointment" asp-route-hour=@hour asp-route-minute=@min asp-route-day=@(i-Model.MaxDays) asp-route-month=@Model.NextMonth asp-route-doctorid="@Model.Doctor.Doctor.Id">@hour:@min</a></td>
+                                    }
+                                }
+                            }
+                        </tr>
+                    }
+                }
+                </table>
+                 @foreach(var k in @Model.Appointments)
+                {
+                    <span id="aheret" value="@k.Day:@k.Hour:@k.Minute"></span>
+                }
+                @foreach(var k in @Model.UserDates)
+                {
+                    <span id="userDates" day="@k.Day" month="@k.Month" hour="@k.Hour" minute="@k.Minute" value="@k.Day:@k.Hour:@k.Minute"></span>
+                }
+            </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        var elements = document.querySelectorAll('#aheret');
+        elements.forEach(function(a){
+            document.getElementById('a '+ a.attributes.value.value).removeAttribute('href');
+            document.getElementById(a.attributes.value.value).style.backgroundColor = "#FFA08C";
+        });
+
+        var userDates = document.querySelectorAll('#userDates');
+        userDates.forEach(function(a){
+            document.getElementById(a.attributes.value.value).style.backgroundColor = "#7DFF57";
+        });
+    });
+</script>

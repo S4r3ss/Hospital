@@ -1,0 +1,96 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+<div class="container rounded bg-white mt-5 mb-5" onload="updateField()">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">@Model.User.Name @Model.User.Surname</span><span class="text-black-50">@Model.User.Email</span><span> </span></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    Audit log
+                </button>
+
+                @if (Model.isDoctor)
+                {
+                    <a class="btn btn-primary mt-3" asp-controller="User" asp-action="AllUsers" asp-route-userName="" asp-route-rank="-1" asp-route-currentPage="0">Users</a>
+                }
+            </div>
+        </div>
+        <div class="col-md-9 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Profile Settings</h4>
+                </div>
+                @using(Html.BeginForm("UpdateUser", "User", new { @userId = Model.User.Id }, FormMethod.Post)){
+                    <div class="row mt-2">  
+                        <div class="col-md-6"><label class="labels">Name</label><input type="text" name="Name" class="form-control" placeholder="first name" value="@Model.User.Name"></div>
+                        <div class="col-md-6"><label class="labels">Surname</label><input type="text" name="Surname" class="form-control" value="@Model.User.Surname" placeholder="surname"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" name="Phone" class="form-control" placeholder="enter phone number" value="@Model.User.Phone"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Address Line 1</label><input type="text" name="email" class="form-control" placeholder="enter address line 1" value="@Model.User.Email"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6"><label class="labels">Country</label><input type="text" name="Address" class="form-control" placeholder="country" value="@Model.User.Address"></div>
+                        <div class="col-md-6"><label class="labels"></label>
+                            <div class="input-group mb-3">
+                              <select class="custom-select form-control" name="gender" id="inputGroupSelect01">
+                                @switch (@Model.User.Gender)
+                                {
+                                    case "1":
+                                        <option>Choose your Gender</option>
+                                        <option value="1" selected>Male</option>
+                                        <option value="2">Female</option>
+                                        break;
+                                    case "2":
+                                        <option>Choose your Gender</option>
+                                        <option value="1" selected>Male</option>
+                                        <option value="2" selected>Female</option>
+                                        break;
+                                    default:
+                                        <option selected>Choose your Gender</option>
+                                        <option value="1">Male</option>
+                                        <option value="2">Female</option>
+                                        break;
+                                }
+                              </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-5 text-center">
+                        <button class="btn btn-primary profile-button" type="submit">Save Profile</button>
+                        <a class="btn btn-primary profile-button" asp-controller="Authentication" asp-action="Logout">Logout</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+      </div>
+      <div class="modal-body">
+          <div>
+              @if(@Model.AuditLog.Count != 0)
+                foreach(var al in @Model.AuditLog)
+                {
+                 <p>@al</p>
+                            <hr />
+                        }
+                    else
+                    {
+                        <p>You don't have any entries in audit log</p>
+                    }
+                </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
